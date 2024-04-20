@@ -1,1 +1,818 @@
-# SATVIKI
+/*------------------------------------CSS CODE-----------------------------------*/
+
+/*-------Webiste Theme-------*/
+
+:root{
+    --hue-1: 257;
+    --hue-2: 47;
+    --main-color-1: hsl(var(--hue-1), 100%, 60%);
+    --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
+    --main-color-2: hsl(var(--hue-2), 100%, 61%);
+    --main-color-dark-2: hsl(var(--hue-2), 82%, 55%);
+    --section-padding: 7rem;
+}
+
+body{
+    --bg-color: hsl(var(--hue-1), 100%, 97%);
+    --bg-color-1: hsl(var(--hue-1), 100%, 95.5%);
+    --bg-color-2: #fff;
+    --bg-color-3: hsl(var(--hue-1), 100%, 98%);
+    --bg-color-transparent: rgba(255, 255, 255, 0.6);
+    --heading-color: hsl(var(--hue-1), 61%, 24%);
+    --text-color: hsl(var(--hue-1), 17%, 63%);
+    
+}
+
+body.dark{
+    --bg-color: hsl(var(--hue-1), 19%, 15%);
+    --bg-color-1: hsl(var(--hue-1), 21%, 11%);
+    --bg-color-2: hsl(var(--hue-1), 23%, 19%);
+    --bg-color-3: hsl(var(--hue-1), 23%, 24%);
+    --bg-color-transparent: hsla(var(--hue-1), 23%, 19%, 0.6);
+    --heading-color: hsl(var(--hue-1), 100%, 95%);
+    --text-color: hsl(var(--hue-1), 14%, 51%);
+}
+
+body.dark .st1{
+    fill: hsl(var(--hue-1), 18%, 29%);
+}
+
+body.dark .toggle-btn {
+    background-color: var(--bg-color-3);
+}
+
+body.dark .toggle-btn:hover {
+    background-color: brightness(110%);
+}
+
+body.dark .nav-link:hover::after,
+body.dark .nav-link.active::after {
+    opacity: 0.6;
+}
+
+body.dark .form-input:hover {
+    filter: brightness(110%)
+}
+
+
+/*-------General Style-------*/
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background-color:  var(--bg-color);
+    font-family: "Poppins", sans-serif;
+    transition: 0.5s background-color;
+}
+
+::selection{
+    background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+/* ------------------ Reusable CSS code -------------------- */
+
+
+.cta{
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.cta .btn{
+    margin-right: 1.5rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: .9rem 1.75rem;
+    border-radius: 17px;
+    background-color: var(--main-color-1);
+    color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    min-width: 125px;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.btn.secondary-btn{
+    position: relative;
+    background-color: transparent;
+    color: var(--main-color-1);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0px;
+    border-bottom: 2.5px solid var(--main-color-2);
+    border-radius: 0px;
+    padding: 0.15rem 0;
+}
+.sub-heading {
+    color: var(--heading-color);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-left: 3px solid var(--main-color-2);
+    padding: 0.13rem 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.heading {
+    color: var(--heading-color);
+    font-size: 3rem;
+    font-family: "Abril Fatface", cursive;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.text {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin: 2rem 0;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 75rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+.logo {
+    margin-right: 1.5rem;
+    height: 120px;
+    line-height: 120px;
+    font-family: "Abril Fatface", cursive;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.logo span {
+    color: var(--main-color-1);
+	
+}
+
+.about{
+    position: relative;
+    padding: var(--section-padding) 0;
+}
+
+/* ------------------ Navbar Styling -------------------- */
+
+nav {
+        background-color: #eedcf8f2;
+        width: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+header.scrolled {
+    background-color: rebeccapurple;
+    box-shadow: 0 5px 20px 0.1px  rgba(0, 0, 0, 0.1);
+}
+
+nav.container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+
+header .logo {
+	height: 120px; 
+	line-height: 120px;
+}
+
+header.scrolled .logo {
+    height: 80px;
+    line-height: 80px;
+}
+
+.links {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links ul{
+    display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.nav-link{
+	position: relative;
+	display: inline-block;
+	margin: 0 1rem;
+	text-transform: uppercase;
+	font-size: .75rem;
+	letter-spacing: 0.5px;
+	color: var(--text-color);
+	font-weight: 500;
+	opacity: 0.9;
+	transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--heading-color)
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+    width: 100%;
+    opacity: 0.2;
+}
+
+.toggle-btn {
+	color: var(--heading-color);
+	min-width: 40px;
+	height: 40px;
+	background-color: var(--bg-color-2);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.1rem;
+	cursor: pointer;
+	box-shadow: 0 0 10px 0px  rgba(0, 0, 0, 0.05);
+	transition: 0.3s;
+}
+
+.toggle-btn:hover {
+	filter: brightness(97%);
+}
+
+/* ------------ Showcase area --------------*/
+
+.showcase-area{
+    padding: 120px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.showcase-area .container {
+    display: grid;
+    grid-template-columns: 1fr 550px;
+    height: calc(100vh - 120px);
+    max-height: 600px;
+    align-items: center;
+    margin-right: -60px;
+}
+
+.showcase-area .sub-heading {
+    margin-bottom: 0.7rem;
+}
+
+.showcase-area .heading {
+    font-size: 3.5rem;
+}
+
+.showcase-area .text {
+    margin: 0.8rem;
+}
+
+/* ------------ About Section Styling --------------*/
+
+.about .container{
+    display: grid;
+    grid-template-columns: 1.05;
+}
+
+.about .text{
+    margin: 3rem 0 4rem;
+}
+
+/* ------------ Skills Section Styling --------------*/
+
+.skills {
+    overflow: hidden;
+}
+
+.skills-box {
+    background-color: var(--bg-color-2);
+    padding: 4rem 9rem;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.box-desc {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.skills-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sk-progress {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.sk-progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* ------------ Contact Section Styling --------------*/
+
+.contact .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8rem;
+    margin-right: -6rem;
+}
+
+.mail {
+   color: var(--main-color-1); 
+   font-weight: 500;
+   font-size: 1.1rem;
+}
+
+.mail i{
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-left: 2px;
+    transform: translateY(3px);
+    transition: 0.3s margin-left;
+}
+
+.mail:hover {
+    color: var(--main-color-dark-1);
+}
+
+.mail:hover i {
+    margin-left: 10px;
+}
+
+.contact-form h3 {
+    color: var(--heading-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+    line-height: 0.9;
+}
+
+.form-input {
+    display: inline-block;
+    padding: 1.2rem 1.5rem;
+    border: 1.8px solid var(--main-color-dark-1);
+    width: 100%;
+    border-radius: 17px;
+}
+
+.contact-form .form-input {
+    margin-bottom: 1.5rem;
+}
+
+/* ------------ Footer Section Styling --------------*/
+
+footer{
+    padding: 4rem 0;
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .social-media{
+    display: flex;
+}
+
+.social-link{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 1rem;
+    background-color: var(--bg-color-1);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    transition: 0.3s;
+}
+
+.social-link:hover{
+    color: var(--main-color-1);
+}
+
+
+.progress-bar {
+    width: 350px;
+    height: 18px;
+    margin-top: 13px;
+    border: 1px solid #251f1ffd;
+    border-radius: 5px;
+    box-shadow: 0 0 90px #ff00ee;
+}
+
+/* Styling the background color of each 
+animation and border radius */
+.percentage {
+    display: block;
+    height: 100%;
+    background-color: #7700ff;
+    border-radius: 5px;
+    animation: progress 2500ms ease-in 1;
+}
+
+.progress-bar-container1 h2 {
+    color: var(--heading-color);
+}
+
+.progress-bar-container1 h4 {
+    color: var(--heading-color);
+}
+
+.progress-bar-container2 h2 {
+    color: var(--heading-color);
+}
+
+.progress-bar-container2 h4 {
+    color: var(--heading-color);
+}
+.progress-bar-container1 {
+    align-items: center;
+    position: static;
+    margin-left: 12rem;
+}
+
+.progress-bar-container2 {
+    width: 100%;
+    margin-left: 45rem;
+}
+
+/* Assigning width of each languages*/
+.c {
+    width: 85%;
+}
+
+.java {
+    width: 75%;
+}
+
+.python {
+    width: 95%;
+}
+
+.html {
+    width: 92%;
+}
+
+.css {
+    width: 87%;
+}
+
+.javascript {
+    width: 80%;
+}
+
+
+/* Animating the progress bar by 
+initially starting from 0*/
+@keyframes progress {
+    from {
+        width: 0;
+    }
+}
+
+/*------------------------------------------HTML CODE---------------------------------------------------*/
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>Satviki's Portfolio Website</title>
+    <!-- ------- CSS Files------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+    <body>
+        <header>
+            <nav class="container">
+                <a href="#" class="logo">My<span>Portfolio</span></a>
+                <div class="links">
+                    <ul>
+                        <li>
+                          <a href="#home" class="nav-link">Home</a> 
+                        </li>
+                        <li>
+                          <a href="#about" class="nav-link">About</a> 
+                        </li>
+                        <li>
+                          <a href="#MySkills" class="nav-link">My Skills</a> 
+                        </li>
+                        <li>
+                          <a href="#ContactMe" class="nav-link">Contact Me</a> 
+                        </li>
+                    </ul>
+                    <i class="uil uil-moon toggle-btn"></i>
+                </div> 
+
+            </nav>
+        </header>
+
+        <main>
+          <section class="showcase-area" id="Home">
+            <div class="container">
+              <div class="showcase-info">
+                <h3 class="sub-heading">Technology Enthusiast!!</h3>
+                <h1 class="heading">SATVIKI SHARMA</h1>
+                <p class="text">I love studying about technological advancements and creating designer websites!</p>
+                <div class="cta">
+                  <a href="mailto:satviki.sharma2022@vitstudent.ac.in" class="btn">Contact me</a>
+                  <a href="C:\Users\satviki sharma\Desktop\web programing portfolio project\satviki_sharma_final_cv.pdf" class="btn secondary-btn">Check out my CV!</a>
+                </div>
+              </div>
+          </section>
+
+          <section class="about section" id="about">
+            <div class="container">
+              <div class="about-grind"></div>
+              <div class="about-info">
+                <h3 class="sub-heading">About Me</h3>
+                <h1 class="heading">Aspire towards getting an intern in Google</h1>
+                <p class="text">
+                  I am a Student with a burning passion for technology. 
+                  I am currently pursuing a Bachelors degree from Vellore Institute Of Technology, where I am specializing in Computer Science with Data Science.
+                  As a student, I am actively involved in Engineering and Technology Management Society Chapter. 
+                  My goal is to leverage my academic background and develop practical skills to contribute to the ever-evolving field of technology.
+                </p>
+              </div>
+            </div>
+          </section>
+          <br>
+          <br>
+          <br>
+          <br>
+
+          <section class="skills section" id="MySkills">
+            <div class="container">
+              <div class="skills-box">
+                <div class="box-heading">
+                <h3 class="sub-heading">My skills</h3>
+                <h1 class="heading">Have a look!</h1>
+                <p class="text">
+                  While on my academic journey, I have acquired skills in programming languages such as [PYTHON, JAVA, C, C++, HTML, JAVASCRIPT, R] as well as knowledge in Engineering Mathematics. 
+                  I am enthusiastic about learning and staying updated with the latest advancements in the tech industry.
+                </p>
+                <a href="#" class="btn">Hire Me</a>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div id="my-pie-chart"></div>
+          </section>
+          <br>
+          <div class="skills">
+            <div class="progress-bar-container1">
+                <h2>C/C++</h2>
+                <h4>85%</h4>
+                <div class="progress-bar">
+                    <span class="percentage c"></span>
+                </div>
+            </div>
+            <br>
+          
+     
+            <div class="progress-bar-container1">
+                <h2>Java</h2>
+                <h4>75%</h4>
+                <div class="progress-bar">
+                    <span class="percentage java"></span>
+                </div>
+            </div>
+            <br>
+          
+     
+            <div class="progress-bar-container1">
+                <h2>Python</h2>
+                <h4>95%</h4>
+                <div class="progress-bar">
+                    <span class="percentage python"></span>
+                </div>
+            </div>
+            <br>
+            
+     
+            <div class="progress-bar-container2">
+                <h2>HTML</h2>
+                <h4>92%</h4>
+                <div class="progress-bar">
+                    <span class="percentage html"></span>
+                </div>
+                <div class="right-aligned"></div>
+                
+            </div>
+            <br>
+            
+     
+            <div class="progress-bar-container2">
+                <h2>CSS</h2>
+                <h4>87%</h4>
+                <div class="progress-bar">
+                    <span class="percentage css"></span>
+                </div>
+                <div class="right-aligned"></div>
+                
+            </div>
+            <br>
+            
+     
+            <div class="progress-bar-container2">
+                <h2>JavaScript</h2>
+                <h4>80%</h4>
+                <div class="progress-bar">
+                    <span class="percentage javascript"></span>
+                </div>
+                <div class="right-aligned"></div>
+                
+            </div>
+        </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+ 
+          <section class="contact section" id="ContactMe">
+           <div class="container">
+            <div class="contact-info">
+              <h3 class="sub-heading">Contact me</h3> 
+              <h1 class="heading">CONNECT WITH ME HERE!</h1>
+              <p class="text">
+                Feel free to reach out if you're interested in discussing potential opportunities or collaborating together.
+              </p>
+              <a href="mailto:satviki.sharma2022@vitstudent.ac.in" class="mail">satviki.sharma2022@vitstudent.ac.in <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" id="arrow"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M1 7h16M11 1l6 6-6 6"></path></g></svg></a>
+            </div>
+            <form action="index.html" class="contact-form"></form>
+           
+            <h3>Send me a message</h3>
+            <br>
+          <br>
+          <br>
+          <br>
+            <input type="text" class="form-input" placeholder="Your Name" required>
+            <br>
+          <br>
+          <br>
+          <br>
+            <input type="text" class="form-input" placeholder="Your E-mail" required>
+            <br>
+          <br>
+          <br>
+          <br>
+            <textarea placeholder="Add Your Message" class="form-input" required></textarea>
+            <br>
+          <br>
+          <br>
+          <br>
+            <input type="submit" value="Send" class="btn">
+           </div> 
+          </section>
+
+        </main>
+
+        <footer>
+          <div class="container">
+          <a href="#" class="logo">My<span>Portfolio</span></a>
+          <p class="text">&copy; Copyright 2024. All rights reserved</p>
+          <ul class="social-media">
+            <li>
+              <a href="https://www.facebook.com/" class="social-link">
+                <i class="uil uil-facebook-f"></i>
+              </a>
+            </li>
+            <a href="https://www.linkedin.com/in/satviki-sharma-68a867200/" class="social-link">
+              <i class="uil uil-linkedin"></i>
+            </a>
+          </li>
+          <a href="https://twitter.com/?lang=en" class="social-link">
+            <i class="uil uil-twitter"></i>
+          </a>
+        </li>
+          </ul>
+          </div>
+        </footer>
+
+        <!--JavaScript Files-->
+
+      <script src="./js/app.js"></script>  
+		
+      
+
+    </body>
+</html>
+
+/*----------------------------------------------JAVASCRIPT CODE--------------------------------------------*/
+
+const header = document.querySelector("header");
+const toggle_btn = document.querySelector(".toggle-btn");
+/*----------------- Sticky Navbar -----------------*/
+
+function stickyNavbar() {
+    header.classList.toggle("scrollled", window.pageYOffset > 0);
+}
+
+ stickyNavbar();   
+
+window.addEventListener("scroll", stickyNavbar);
+
+/*----------------- Change Page Theme-----------------*/
+
+function changeTheme() {
+    if (!document.body.classList.contains("dark")) {
+        document.body.classList.add("dark");
+        toggle_btn.classList.replace("uil-moon", "uil-sun");
+    } else {
+        document.body.classList.remove("dark");
+        toggle_btn.classList.replace ("uil-sun", "uil-moon");    
+    }
+}
+
+toggle_btn.addEventListener("click", () => {
+    changeTheme();
+});
+
+/*----------------- Form Activation-----------------*/
+
+const forminput = document.getElementById('Form');
+
+
+forminput.addEventListener('submit', function(event) {
+
+  const messageInput = document.querySelector('input[Your Name="message"]');
+ 
+  if (messageInput.value === '') {
+   
+    event.preventDefault();
+
+    const errorMessage = document.createElement('div');
+    errorMessage.textContent = 'Please fill in the message field.';
+    form.appendChild(errorMessage);
+  }
+});
